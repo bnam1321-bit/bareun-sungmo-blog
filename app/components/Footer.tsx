@@ -13,7 +13,7 @@ export default function Footer() {
                             <span className="text-2xl font-black text-gray-900">더바른성모내과</span>
                         </Link>
                         <p className="text-gray-600 mb-6 leading-relaxed">
-                            인천 서구 주민 여러분의 건강 주치의.<br />
+                            검단신도시 아라동 주민 여러분의 건강 주치의.<br />
                             정확한 진단과 따뜻한 진료로 함께하겠습니다.
                         </p>
                         <div className="space-y-3 text-sm text-gray-600">
@@ -40,7 +40,6 @@ export default function Footer() {
                                 <div className="text-right text-gray-600">
                                     <span className="block font-medium text-gray-900">08:00 - 18:00</span>
                                     <span className="text-xs text-gray-500">점심시간 13:00 - 14:00</span>
-                                    <span className="text-xs text-red-500 block">접수마감 17:30</span>
                                 </div>
                             </li>
                             <li className="flex justify-between items-start border-b border-gray-50 pb-2">
@@ -48,7 +47,6 @@ export default function Footer() {
                                 <div className="text-right text-gray-600">
                                     <span className="block font-medium text-gray-900">08:00 - 14:00</span>
                                     <span className="text-xs text-gray-500">점심시간 없음</span>
-                                    <span className="text-xs text-red-500 block">접수마감 13:30</span>
                                 </div>
                             </li>
                             <li className="flex justify-between items-center pt-1">

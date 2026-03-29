@@ -20,7 +20,7 @@ export default function FloatingBar() {
             </button>
 
             <a
-                href="https://map.naver.com/p/search/인천광역시%20서구%20이음3로%20149%20위너스프라자"
+                href="https://map.naver.com/p/search/더바른성모내과의원"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="floating-item"
