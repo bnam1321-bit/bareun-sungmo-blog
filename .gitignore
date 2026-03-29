@@ -5,3 +5,5 @@ node_modules/
 !public/images/blog/.gitkeep
 .vercel
 .env*.local
+
+.vercel

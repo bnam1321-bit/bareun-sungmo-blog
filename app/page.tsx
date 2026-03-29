@@ -21,8 +21,8 @@ export default function Home() {
               <span className="text-sm font-semibold">🏥 전문의가 전하는 의학정보</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent break-keep leading-tight sm:leading-snug lg:leading-normal">
-              인천 서구 당하동에 위치한<br />
-              소화기 내과 전문의 진료 의원<br />
+              인천 서구 검단신도시 아라동에 위치한<br />
+              소화기 내과 전문의 2인 진료 의원<br />
               더바른성모내과
             </h1>
             <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed break-keep mt-4">
