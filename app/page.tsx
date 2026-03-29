@@ -11,36 +11,35 @@ export default function Home() {
   const posts = getAllPosts();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+    <div className="min-h-screen bg-stone-50">
       {/* Premium Hero Header */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDEzNGgxMnYxMkgzNnptMjQgMGgxMnYxMkg2MHpNMTIgMTQ2aDEydjEySDEyem0yNCAwaDEydjEySDM2em0yNCAwaDEydjEySDYweiIvPjwvZz48L2c+PC9zdmc+')] opacity-10"></div>
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative overflow-hidden text-white bg-stone-900 bg-[url('/images/clinic-interior.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[2px]"></div>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 border border-white/20">
-              <span className="text-sm font-semibold">🏥 전문의가 전하는 의학정보</span>
+            <div className="inline-flex items-center px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full mb-8 border border-white/20 shadow-lg">
+              <span className="text-sm font-bold text-stone-50 tracking-wide">🏥 프리미엄 소화기 내과 전문의 2인 진료</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent break-keep leading-tight sm:leading-snug lg:leading-normal">
-              인천 서구 검단신도시 아라동에 위치한<br />
-              소화기 내과 전문의 2인 진료 의원<br />
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 text-white break-keep leading-tight sm:leading-snug lg:leading-normal drop-shadow-lg">
+              검단신도시 아라동<br />
               더바른성모내과
             </h1>
-            <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed break-keep mt-4">
+            <p className="text-lg sm:text-xl text-stone-200 max-w-3xl mx-auto leading-relaxed break-keep mt-4 font-medium drop-shadow">
               위·대장내시경, 건강검진, 만성질환 관리까지<br className="hidden sm:block" /> 정확한 진단과 따뜻한 진료로 함께합니다.
             </p>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-slate-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-stone-50 to-transparent"></div>
       </div>
 
       {/* Blog Posts Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-8">
         {posts.length === 0 ? (
           <div className="text-center py-32">
-            <div className="inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-gradient-to-br from-blue-100 to-purple-100 mb-8 shadow-lg">
+            <div className="inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-stone-100 mb-8 shadow-sm border border-stone-200">
               <span className="text-5xl">📝</span>
             </div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">준비중입니다</h3>
+            <h3 className="text-xl font-bold text-stone-800 mb-3">준비중입니다</h3>
             <p className="text-gray-500 text-lg">곧 유익한 건강정보를 만나보실 수 있습니다.</p>
           </div>
         ) : (
@@ -68,16 +67,16 @@ export default function Home() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-black text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
+                    <h3 className="text-xl font-black text-stone-900 mb-3 line-clamp-2 group-hover:text-amber-700 transition-colors leading-tight tracking-tight">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-5 line-clamp-3 leading-relaxed">
+                    <p className="text-stone-600 text-sm mb-5 line-clamp-3 leading-relaxed">
                       {post.description}
                     </p>
 
                     {/* Read More Button */}
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                      <span className="text-blue-600 text-sm font-bold group-hover:translate-x-2 transition-transform inline-flex items-center gap-2">
+                    <div className="flex items-center justify-between pt-4 border-t border-stone-100">
+                      <span className="text-amber-700 text-sm font-bold group-hover:translate-x-2 transition-transform inline-flex items-center gap-2">
                         자세히 보기
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />

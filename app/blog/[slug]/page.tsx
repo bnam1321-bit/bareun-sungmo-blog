@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Back Navigation */}
             <div className="bg-white border-b border-gray-100">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                    <Link href="/blog" className="inline-flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors">
+                    <Link href="/blog" className="inline-flex items-center text-sm text-stone-600 hover:text-amber-700 transition-colors">
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {/* Article Header */}
                 <header className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-bold shadow-lg">
+                        <span className="px-4 py-2 bg-stone-700 text-white rounded-full text-sm font-bold shadow-md">
                             {post.tags?.[0] || '건강정보'}
                         </span>
                         <time className="text-gray-500 text-sm flex items-center">
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: Props) {
                     </h1>
 
                     {post.description && (
-                        <p className="text-xl text-gray-600 leading-relaxed border-l-4 border-blue-500 pl-6 py-2">
+                        <p className="text-xl text-stone-600 leading-relaxed border-l-4 border-amber-600 pl-6 py-2">
                             {post.description}
                         </p>
                     )}
@@ -135,15 +135,15 @@ export default async function BlogPostPage({ params }: Props) {
 
                 {/* Article Content */}
                 <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-12 mb-12">
-                    <div className="prose prose-lg prose-blue max-w-none
-                        prose-headings:font-bold prose-headings:text-gray-900
-                        prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-3 prose-h2:border-b prose-h2:border-gray-200
+                    <div className="prose prose-lg prose-amber max-w-none
+                        prose-headings:font-bold prose-headings:text-stone-900
+                        prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-3 prose-h2:border-b prose-h2:border-stone-200
                         prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                        prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-                        prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-                        prose-strong:text-gray-900 prose-strong:font-bold
+                        prose-p:text-stone-700 prose-p:leading-relaxed prose-p:mb-6
+                        prose-a:text-amber-700 prose-a:no-underline hover:prose-a:underline
+                        prose-strong:text-stone-900 prose-strong:font-bold
                         prose-ul:my-6 prose-li:my-2
-                        prose-code:bg-blue-50 prose-code:text-blue-600 prose-code:px-2 prose-code:py-1 prose-code:rounded
+                        prose-code:bg-stone-50 prose-code:text-amber-800 prose-code:px-2 prose-code:py-1 prose-code:rounded
                     ">
                         <ReactMarkdown>{post.content}</ReactMarkdown>
                     </div>
@@ -166,9 +166,9 @@ export default async function BlogPostPage({ params }: Props) {
                 )}
 
                 {/* Author & Clinic Info */}
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 sm:p-10 mb-12 border border-blue-100">
+                <div className="bg-stone-50 rounded-3xl p-8 sm:p-10 mb-12 border border-stone-200">
                     <div className="flex items-start gap-4 mb-6">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                        <div className="w-16 h-16 rounded-full bg-stone-200 flex items-center justify-center text-3xl font-bold shadow-sm">
                             🏥
                         </div>
                         <div>
@@ -182,21 +182,21 @@ export default async function BlogPostPage({ params }: Props) {
                     </p>
                     <div className="grid sm:grid-cols-2 gap-4 text-sm mb-6">
                         <div className="flex items-center text-gray-700">
-                            <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 mr-2 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                             인천광역시 서구 이음3로 149 위너스 프라자 5층
                         </div>
                         <div className="flex items-center text-gray-700">
-                            <svg className="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 mr-2 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
                             0507-1398-8277
                         </div>
                     </div>
 
-                    <div className="border-t border-blue-100 pt-6 mt-6 flex justify-end">
+                    <div className="border-t border-stone-200 pt-6 mt-6 flex justify-end">
                         <a
                             href={`https://github.com/bnam1321-bit/bareun-sungmo-blog/edit/main/content/posts/${encodeURIComponent(post.slug)}.md`}
                             target="_blank"

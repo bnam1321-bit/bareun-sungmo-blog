@@ -18,14 +18,14 @@ export default function TypographicCover({
     // 1. Deterministic Gradient Generation based on slug
     const getGradient = (id: string) => {
         const gradients = [
-            'from-blue-500 via-indigo-500 to-violet-500',   // Deep Blue/Purple
-            'from-emerald-500 via-teal-500 to-cyan-500',     // Medical Green/Teal
-            'from-rose-500 via-pink-500 to-fuchsia-500',     // Warm Red/Pink
-            'from-amber-500 via-orange-500 to-red-500',      // Energetic Orange
-            'from-cyan-500 via-blue-500 to-indigo-500',      // Cool Cyan/Blue
-            'from-violet-600 via-purple-600 to-indigo-600',  // Deep Violet
-            'from-sky-400 via-blue-500 to-blue-600',         // Sky Blue
-            'from-teal-400 via-emerald-500 to-green-600',    // Fresh Green
+            'from-stone-500 via-stone-400 to-stone-500',   // Warm Stone
+            'from-stone-600 via-stone-500 to-amber-700',   // Deep Stone/Amber
+            'from-amber-700 via-amber-600 to-orange-500',  // Warm Amber
+            'from-stone-400 via-stone-300 to-stone-400',   // Light Stone
+            'from-orange-500 via-amber-600 to-stone-500',  // Mixed Warm
+            'from-stone-500 via-stone-600 to-stone-500',   // Deep Neutral
+            'from-amber-600 via-stone-400 to-stone-500',   // Amber/Stone Soft
+            'from-zinc-500 via-stone-400 to-stone-500',    // Muted Zinc/Stone
         ];
 
         // Check if slug is defined and is a string
