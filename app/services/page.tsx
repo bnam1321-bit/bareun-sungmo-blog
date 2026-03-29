@@ -1,0 +1,117 @@
+
+
+export default function ServicesPage() {
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-20 px-4">
+            <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-16">
+                    <h1 className="text-5xl font-black text-gray-900 mb-6">진료 안내</h1>
+                    <p className="text-xl text-gray-600">더바른성모내과는 다음과 같은 서비스를 제공합니다</p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 mb-16">
+                    {/* 위내시경 / 대장내시경 */}
+                    <div className="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-3xl mb-6">
+                            🔬
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">위내시경 / 대장내시경</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            소화기 내과 전문의의 정확한 내시경 검사
+                        </p>
+                    </div>
+
+                    {/* 건강검진 */}
+                    <div className="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-3xl mb-6">
+                            🏥
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">건강검진</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            채용검진 및 일반 건강검진
+                        </p>
+                    </div>
+
+                    {/* 만성질환 관리 */}
+                    <div className="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-3xl mb-6">
+                            💊
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">만성질환 관리</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            고혈압, 당뇨, 고지혈증 등 체계적 관리
+                        </p>
+                    </div>
+
+                    {/* 초음파 진료 */}
+                    <div className="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-3xl mb-6">
+                            📡
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">초음파 클리닉</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            복부, 갑상선 등 정밀 초음파 검사
+                        </p>
+                    </div>
+
+                    {/* 수액 치료 */}
+                    <div className="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center text-3xl mb-6">
+                            💉
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">수액 치료</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            피로회복, 영양보충을 위한 수액 치료
+                        </p>
+                    </div>
+
+                    {/* 비만 클리닉 */}
+                    <div className="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-3xl mb-6">
+                            ⚖️
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">비만 클리닉</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                            체계적인 체중 관리 프로그램
+                        </p>
+                    </div>
+                </div>
+
+                {/* 진료 시간 */}
+                <div className="bg-white rounded-3xl p-12 shadow-lg">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">진료 시간</h2>
+                    <div className="max-w-2xl mx-auto space-y-4">
+                        <div className="flex justify-between py-3 border-b border-gray-200">
+                            <span className="font-semibold text-gray-700">평일 (월~금)</span>
+                            <span className="text-gray-600">08:00 ~ 18:00</span>
+                        </div>
+                        <div className="flex justify-between py-3 border-b border-gray-200">
+                            <span className="font-semibold text-gray-700">점심시간</span>
+                            <span className="text-gray-600">13:00 ~ 14:00</span>
+                        </div>
+                        <div className="flex justify-between py-3 border-b border-gray-200">
+                            <span className="font-semibold text-blue-600">토요일</span>
+                            <span className="text-gray-600">08:00 ~ 14:00</span>
+                        </div>
+                        <div className="flex justify-between py-3">
+                            <span className="font-semibold text-red-500">일/공휴일</span>
+                            <span className="text-red-500 font-bold">휴진</span>
+                        </div>
+                    </div>
+
+                    <div className="mt-8 text-center">
+                        <p className="text-gray-500 mb-6">
+                            ※진료 시간은 사정에 따라 변경될 수 있습니다. 내원 전 문의 바랍니다.
+                        </p>
+                        <a
+                            href="tel:0507-1398-8277"
+                            className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all hover:scale-105 shadow-lg"
+                        >
+                            📞 전화 문의하기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
