@@ -104,7 +104,7 @@ export default function ServicesPage() {
                             ※진료 시간은 사정에 따라 변경될 수 있습니다. 내원 전 문의 바랍니다.
                         </p>
                         <a
-                            href="tel:0507-1398-8277"
+                            href="tel:032-568-8275"
                             className="inline-flex items-center px-8 py-4 bg-stone-800 text-white rounded-full font-bold hover:bg-stone-900 transition-all hover:scale-105 shadow-md"
                         >
                             📞 전화 문의하기

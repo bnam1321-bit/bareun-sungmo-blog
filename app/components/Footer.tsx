@@ -23,7 +23,7 @@ export default function Footer() {
                             </div>
                             <div className="flex items-start">
                                 <span className="font-bold w-16 shrink-0 text-stone-700">전화</span>
-                                <a href="tel:0507-1398-8277" className="hover:text-amber-700 transition-colors">0507-1398-8277</a>
+                                <a href="tel:032-568-8275" className="hover:text-amber-700 transition-colors">032-568-8275</a>
                             </div>
                         </div>
                     </div>

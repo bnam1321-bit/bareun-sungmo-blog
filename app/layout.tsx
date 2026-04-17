@@ -12,7 +12,7 @@ const jsonLd = {
   "name": "더바른성모내과",
   "image": "https://thebareunmed.co.kr/logo.png",
   "url": "https://thebareunmed.co.kr",
-  "telephone": "0507-1398-8277",
+  "telephone": "032-568-8275",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "인천광역시 서구 이음3로 149 위너스 프라자 5층",
