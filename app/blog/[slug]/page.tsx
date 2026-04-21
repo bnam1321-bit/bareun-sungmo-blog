@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
         author: {
             '@type': 'MedicalClinic',
             name: '더바른성모내과',
-            url: 'https://thebareunmed.co.kr'
+            url: 'https://thebareunmedb.co.kr'
         },
     };
 

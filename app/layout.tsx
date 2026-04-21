@@ -10,8 +10,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
   "name": "더바른성모내과",
-  "image": "https://thebareunmed.co.kr/logo.png",
-  "url": "https://thebareunmed.co.kr",
+  "image": "https://thebareunmedb.co.kr/logo.png",
+  "url": "https://thebareunmedb.co.kr",
   "telephone": "032-568-8275",
   "address": {
     "@type": "PostalAddress",
@@ -51,7 +51,7 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://thebareunmed.co.kr'),
+  metadataBase: new URL('https://thebareunmedb.co.kr'),
   title: "더바른성모내과 | 인천 서구 소화기내과 전문",
   description: "인천 서구 더바른성모내과, 소화기 내과 전문의 진료, 위대장내시경, 건강검진 안내.",
   keywords: "인천 서구 내과, 인천서구내과, 검단신도시내과, 아라동내과, 더바른성모내과, 건강검진, 위내시경, 대장내시경",
