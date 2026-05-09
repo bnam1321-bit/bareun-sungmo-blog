@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { format } = require('date-fns');
@@ -43,7 +43,7 @@ async function generatePost() {
         console.log(`🎯 지정된 주제: [${topic}]`);
     } else {
         try {
-            const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+            const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
             const topicPrompt = `
             당신은 내과 병원 블로그 마케터입니다.
             기존에 작성된 블로그 글 제목들은 다음과 같습니다:
@@ -89,9 +89,9 @@ async function generatePost() {
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            console.log(`🚀 Gemini 2.5 Flash 모델로 글 작성 시도 (${attempt}/${MAX_RETRIES})...`);
+            console.log(`🚀 Gemini 2.5 Pro 모델로 글 작성 시도 (${attempt}/${MAX_RETRIES})...`);
             const model = genAI.getGenerativeModel({
-                model: "gemini-2.5-flash",
+                model: "gemini-2.5-pro",
                 generationConfig: {
                     temperature: 0.7,
                     topP: 0.8,
@@ -179,7 +179,7 @@ ${CLINIC_INFO}
             const result = await model.generateContent(fullPrompt);
             const response = await result.response;
             content = response.text();
-            console.log("✨ Gemini 2.5 Flash 작성 성공!");
+            console.log("✨ Gemini 2.5 Pro 작성 성공!");
             console.log(`📄 생성된 글 길이: ${content.length}자`);
             break; // 성공하면 루프 종료
 
@@ -236,7 +236,7 @@ ${topicContent.content}
     // SEO 최적화된 Slug 생성을 위한 추가 요청
     let slug = "";
     try {
-        const slugModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+        const slugModel = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
         const slugPrompt = `
         블로그 글 제목: "${topic}"
         
