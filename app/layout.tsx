@@ -55,6 +55,15 @@ export const metadata: Metadata = {
   title: "더바른성모내과 | 인천 서구 소화기내과 전문",
   description: "인천 서구 더바른성모내과, 소화기 내과 전문의 진료, 위대장내시경, 건강검진 안내.",
   keywords: "인천 서구 내과, 인천서구내과, 검단신도시내과, 아라동내과, 더바른성모내과, 건강검진, 위내시경, 대장내시경",
+  verification: {
+    other: {
+      "naver-site-verification": ["326f5ca989317f002a62da6b3d667111a44e5ac2"]
+    }
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({
