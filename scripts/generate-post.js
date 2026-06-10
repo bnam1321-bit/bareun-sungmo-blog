@@ -1,4 +1,4 @@
-﻿const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { format } = require('date-fns');
@@ -50,6 +50,7 @@ async function generatePost() {
             ${JSON.stringify(existingTitles)}
     
             위 주제들과 겹치지 않는, 내과 환자들에게 유용한 새로운 건강 정보 주제 1가지만 추천해주세요.
+            - 반드시 **건강검진**(국가건검, 5대암검진, 채용검진 등), **소화기질환**(위염, 식도염, 대장염, 용종, 내시경 등), **만성질환**(고혈압, 당뇨병, 고지혈증, 지방간, 대사증후군 등) 중 한 가지 범주에 해당하는 주제여야 합니다.
             출력 형식: 주제만 텍스트로 출력 (예: "겨울철 노로바이러스 장염의 증상과 예방")
             명확하고 구체적인 주제를 선정하세요.
             `;
@@ -60,16 +61,16 @@ async function generatePost() {
         } catch (e) {
             console.error("❌ 주제 생성 실패, 기본 리스트 사용", e);
             const healthTopics = [
-                '환절기 독감 예방과 접종의 중요성',
-                '직장인 만성피로와 수액 치료',
-                '속쓰림과 위염, 위내시경이 필요한 순간',
-                '대장용종과 대장내시경 검사의 주기',
-                '고혈압 환자의 겨울철 건강 관리',
-                '당뇨병 초기 증상과 식이요법',
-                '지방간 예방을 위한 생활 습관',
-                '비타민D 결핍과 주사 치료',
-                '대상포진 초기 증상과 예방접종',
-                '헬리코박터균 감염과 제균 치료'
+                '위대장내시경 검사가 필요한 소화불량 증상',
+                '당뇨병 초기 증상과 예방을 위한 식이요법',
+                '대장용종의 위험성과 대장내시경 검사 주기',
+                '고혈압 환자의 계절별 혈압 관리법',
+                '지방간 예방을 위한 올바른 생활 습관',
+                '고지혈증과 이상지질혈증의 관리 가이드',
+                '국가 건강검진 항목과 위암 예방',
+                '역류성 식도염의 증상과 생활 속 치료법',
+                '대사증후군 자가진단과 예방을 위한 운동법',
+                '위내시경 검사 전 주의사항과 준비 절차'
             ];
             topic = healthTopics[Math.floor(Math.random() * healthTopics.length)];
             console.log(`📝 랜덤 선택 주제: [${topic}]`);
@@ -79,6 +80,33 @@ async function generatePost() {
     // KST 기준으로 날짜 설정 (UTC+9)
     const kstDate = new Date(new Date().getTime() + 9 * 60 * 60 * 1000);
     const today = format(kstDate, 'yyyy-MM-dd');
+
+    // 주제에 따른 맞춤형 장비 안내 동적 바인딩 (번갈아가며 노출 및 중복 배제)
+    let equipmentInstruction = "";
+    const lowerTopic = topic.toLowerCase();
+    
+    if (lowerTopic.includes('내시경') || lowerTopic.includes('위염') || lowerTopic.includes('식도염') || lowerTopic.includes('장염') || lowerTopic.includes('용종') || lowerTopic.includes('대장') || lowerTopic.includes('위암')) {
+        equipmentInstruction = `## 🏥 의료 장비 강조 지시사항 (선택 노출)
+- 본 주제는 소화기계 질환/내시경검사와 밀접하므로, 본문 내시경 관련 내용 서술 시 더바른성모내과의 주요 강점 장비인 **올림푸스 CV-290 내시경**을 언급하며 고해상도 화질과 정밀함 등의 강점을 1회 자연스럽게 포함하십시오. 타 장비(초음파, 유방촬영기)는 이번 본문에 절대 언급하지 마십시오.`;
+    } else if (lowerTopic.includes('초음파') || lowerTopic.includes('지방간') || lowerTopic.includes('간경변') || lowerTopic.includes('갑상선') || lowerTopic.includes('경동맥') || lowerTopic.includes('심장')) {
+        equipmentInstruction = `## 🏥 의료 장비 강조 지시사항 (선택 노출)
+- 본 주제는 초음파 검사와 밀접하므로, 본문 초음파 검사 관련 내용 서술 시 더바른성모내과의 주요 강점 장비인 **삼성 메디슨 V7 초음파**의 정밀 진단 기능과 선명함 등의 강점을 1회 자연스럽게 포함하십시오. 타 장비(내시경, 유방촬영기)는 이번 본문에 절대 언급하지 마십시오.`;
+    } else if (lowerTopic.includes('유방') || lowerTopic.includes('유방암') || lowerTopic.includes('촬영') || lowerTopic.includes('여성검진') || lowerTopic.includes('유방촬영')) {
+        equipmentInstruction = `## 🏥 의료 장비 강조 지시사항 (선택 노출)
+- 본 주제는 유방 진단과 밀접하므로, 본문 유방 진단 관련 내용 서술 시 더바른성모내과의 프리미엄 유방촬영 장비인 **Pinkview-BT** 및 **Pinkview-UPS(DR system)**의 정밀함과 환자 촬영 편의성 등의 강점을 1회 자연스럽게 포함하십시오. 타 장비(내시경, 초음파)는 이번 본문에 절대 언급하지 마십시오.`;
+    } else {
+        // 일반 건강검진 및 만성질환 주제의 경우 3가지 장비 중 하나를 번갈아가며(날짜 기준) 자연스럽게 노출
+        const equipments = [
+            `## 🏥 의료 장비 강조 지시사항 (선택 노출)
+- 정밀 검사의 중요성을 강조할 때, 필요한 경우 더바른성모내과의 주요 장비 중 하나인 **올림푸스 CV-290 내시경**을 연계하여 1회 자연스럽게 언급하십시오. 타 장비는 생략하여 홍보가 과다하거나 반복 노출되지 않도록 하십시오.`,
+            `## 🏥 의료 장비 강조 지시사항 (선택 노출)
+- 정밀 진단의 중요성을 강조할 때, 필요한 경우 더바른성모내과의 주요 장비 중 하나인 **삼성 메디슨 V7 초음파**를 연계하여 1회 자연스럽게 언급하십시오. 타 장비는 생략하여 홍보가 과다하거나 반복 노출되지 않도록 하십시오.`,
+            `## 🏥 의료 장비 강조 지시사항 (선택 노출)
+- 여성 건강검진의 중요성을 강조할 때, 필요한 경우 더바른성모내과의 주요 장비 중 하나인 **Pinkview-BT** 및 **Pinkview-UPS(DR system) 유방촬영장치**를 연계하여 1회 자연스럽게 언급하십시오. 타 장비는 생략하여 홍보가 과다하거나 반복 노출되지 않도록 하십시오.`
+        ];
+        const selectedIndex = new Date().getDate() % 3;
+        equipmentInstruction = equipments[selectedIndex];
+    }
 
     // 2. 글 작성 (Updated Gemini API)
     let content = "";
@@ -101,11 +129,13 @@ async function generatePost() {
             });
 
             const fullPrompt = `${SYSTEM_PROMPT}
-
+ 
 ## 입력된 주제
 - **주제**: "${topic}"
 - **타겟**: 해당 증상으로 고민하는 환자, 가족, 건강에 관심있는 일반인
 - **핵심 키워드**: ${KEYWORDS.join(', ')}
+
+${equipmentInstruction}
 
 ## 👩‍⚕️ 여성 질환/안심 검진 관련 특별 지시사항 (SEO)
 - 만약 위 주제(topic)가 **여성 질환**(방광염, 갑상선, 폐경, 골다공증 등)이나 **여성 건강검진**(유방초음파, 갑상선초음파 등)과 관련되어 있다면, 본문에 반드시 **"여성 소화기내과 전문의(여의사)가 상주하여 여성 환자분들이 더 편안하고 세심하게 진료/검사받을 수 있다"**는 내용을 자연스럽게 포함하세요.
