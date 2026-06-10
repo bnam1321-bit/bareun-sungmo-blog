@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { CLINIC_NAME, SITE_URL } from '@/lib/constants';
+import EditDeleteButtons from './EditDeleteButtons';
+
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -196,16 +198,13 @@ export default async function BlogPostPage({ params }: Props) {
                         </div>
                     </div>
 
-                    <div className="border-t border-stone-200 pt-6 mt-6 flex justify-end">
-                        <a
-                            href={`https://github.com/bnam1321-bit/bareun-sungmo-blog/edit/main/content/posts/${encodeURIComponent(post.slug)}.md`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-gray-600 text-xs underline decoration-gray-300 underline-offset-4 transition-colors"
-                        >
-                            수정
-                        </a>
-                    </div>
+                    <EditDeleteButtons
+                        slug={post.slug}
+                        initialTitle={post.title}
+                        initialDescription={post.description}
+                        initialTags={post.tags}
+                        initialContent={post.content}
+                    />
                 </div>
             </article>
         </div>
