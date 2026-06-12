@@ -69,7 +69,7 @@ export default function EditDeleteButtons({
         router.push('/blog');
         router.refresh();
       } else {
-        alert(`삭제 실패: ${data.error || '알 수 없는 오류가 발생했습니다.'}`);
+        alert(`삭제 실패: ${data.error || '알 수 없는 오류가 발생했습니다.'} ${data.details ? `(${data.details})` : ''}`);
       }
     } catch (err: any) {
       console.error(err);

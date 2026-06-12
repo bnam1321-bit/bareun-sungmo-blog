@@ -84,7 +84,14 @@ ${content}
 `;
 
     // 로컬 파일 쓰기
-    fs.writeFileSync(fullPath, fileContent, 'utf-8');
+    try {
+      fs.writeFileSync(fullPath, fileContent, 'utf-8');
+    } catch (fsError: any) {
+      console.warn('Local filesystem write failed (expected on Vercel):', fsError.message);
+      if (!process.env.GITHUB_TOKEN) {
+        throw fsError;
+      }
+    }
 
     // GitHub API 연동
     const githubToken = process.env.GITHUB_TOKEN;
@@ -153,8 +160,15 @@ export async function DELETE(request: Request) {
     const fullPath = path.join(postsDirectory, `${decodedSlug}.md`);
 
     // 로컬 파일 삭제
-    if (fs.existsSync(fullPath)) {
-      fs.unlinkSync(fullPath);
+    try {
+      if (fs.existsSync(fullPath)) {
+        fs.unlinkSync(fullPath);
+      }
+    } catch (fsError: any) {
+      console.warn('Local filesystem delete failed (expected on Vercel):', fsError.message);
+      if (!process.env.GITHUB_TOKEN) {
+        throw fsError;
+      }
     }
 
     // GitHub API 연동
