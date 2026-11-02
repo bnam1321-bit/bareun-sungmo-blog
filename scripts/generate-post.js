@@ -153,7 +153,7 @@ ${equipmentInstruction}
 ---
 title: "(매력적이고 검색 최적화된 제목)"
 date: "${today}"
-description: "(160자 이내 SEO 최적화 설명)"
+description: "(핵심 결론과 의학적 팩트가 담긴 150자 이내 요약문 - LLM 요약 인용용)"
 tags: ["검단신도시내과", "아라동내과", "검단신도시 아라동 내과", "주제관련태그1", "주제관련태그2"]
 author: "더바른성모내과"
 coverImage: ""

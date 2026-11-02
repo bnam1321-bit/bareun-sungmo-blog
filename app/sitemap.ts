@@ -12,12 +12,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }));
 
-    const staticPages = [
+    const staticPages: MetadataRoute.Sitemap = [
         {
             url: SITE_URL,
             lastModified: new Date(),
-            changeFrequency: 'daily' as const,
+            changeFrequency: 'daily',
             priority: 1.0,
+        },
+        {
+            url: `${SITE_URL}/blog`,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 0.9,
+        },
+        {
+            url: `${SITE_URL}/services`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: `${SITE_URL}/llms.txt`,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 0.8,
+        },
+        {
+            url: `${SITE_URL}/llms-full.txt`,
+            lastModified: new Date(),
+            changeFrequency: 'daily',
+            priority: 0.7,
         },
     ];
 
